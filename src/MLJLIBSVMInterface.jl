@@ -60,6 +60,7 @@ for Model in [:SVC, :ProbabilisticSVC]
             degree::Int32
             coef0::Float64
             tolerance::Float64
+            max_iter::Int32
             shrinking::Bool
         end
 
@@ -71,6 +72,7 @@ for Model in [:SVC, :ProbabilisticSVC]
             ,degree::Int32 = Int32(3)
             ,coef0::Float64 = 0.0
             ,tolerance::Float64 = .001
+            ,max_iter::Int32 = Int32(-1)
             ,shrinking::Bool = true
             )
 
@@ -82,6 +84,7 @@ for Model in [:SVC, :ProbabilisticSVC]
                 ,degree
                 ,coef0
                 ,tolerance
+                ,max_iter
                 ,shrinking
             )
 
@@ -106,6 +109,7 @@ for Model in [:NuSVC, :ProbabilisticNuSVC]
             degree::Int32
             coef0::Float64
             tolerance::Float64
+            max_iter::Int32
             shrinking::Bool
         end
 
@@ -116,7 +120,8 @@ for Model in [:NuSVC, :ProbabilisticNuSVC]
             ,cachesize::Float64 = 200.0
             ,degree::Int32 = Int32(3)
             ,coef0::Float64 = 0.
-                ,tolerance::Float64 = .001
+            ,tolerance::Float64 = .001
+            ,max_iter::Int32 = Int32(-1)
             ,shrinking::Bool = true)
 
             model = $Model(
@@ -127,6 +132,7 @@ for Model in [:NuSVC, :ProbabilisticNuSVC]
                 ,degree
                 ,coef0
                 ,tolerance
+                ,max_iter
                 ,shrinking
             )
 
@@ -146,6 +152,7 @@ mutable struct OneClassSVM <: MMI.UnsupervisedDetector
     degree::Int32
     coef0::Float64
     tolerance::Float64
+    max_iter::Int32
     shrinking::Bool
 end
 
@@ -157,6 +164,7 @@ function OneClassSVM(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.0
     ,tolerance::Float64 = .001
+    ,max_iter::Int32 = Int32(-1)
     ,shrinking::Bool = true)
 
     model = OneClassSVM(
@@ -167,6 +175,7 @@ function OneClassSVM(
         ,degree
         ,coef0
         ,tolerance
+        ,max_iter
         ,shrinking
     )
 
@@ -185,6 +194,7 @@ mutable struct NuSVR <: MMI.Deterministic
     degree::Int32
     coef0::Float64
     tolerance::Float64
+    max_iter::Int32
     shrinking::Bool
 end
 
@@ -197,6 +207,7 @@ function NuSVR(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.
     ,tolerance::Float64 = .001
+    ,max_iter::Int32 = Int32(-1)
     ,shrinking::Bool = true)
 
     model = NuSVR(
@@ -208,6 +219,7 @@ function NuSVR(
         ,degree
         ,coef0
         ,tolerance
+        ,max_iter
         ,shrinking
     )
 
@@ -226,6 +238,7 @@ mutable struct EpsilonSVR <: MMI.Deterministic
     degree::Int32
     coef0::Float64
     tolerance::Float64
+    max_iter::Int32
     shrinking::Bool
 end
 
@@ -238,6 +251,7 @@ function EpsilonSVR(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.
     ,tolerance::Float64 = .001
+    ,max_iter::Int32 = Int32(-1)
     ,shrinking::Bool = true)
 
     model = EpsilonSVR(
@@ -249,6 +263,7 @@ function EpsilonSVR(
         ,degree
         ,coef0
         ,tolerance
+        ,max_iter
         ,shrinking
     )
 
