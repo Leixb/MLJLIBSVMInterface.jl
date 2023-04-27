@@ -72,7 +72,7 @@ for Model in [:SVC, :ProbabilisticSVC]
             ,degree::Int32 = Int32(3)
             ,coef0::Float64 = 0.0
             ,tolerance::Float64 = .001
-            ,max_iter::Int32 = Int32(-1)
+            ,max_iter::Int32 = Int32(1e7)
             ,shrinking::Bool = true
             )
 
@@ -121,7 +121,7 @@ for Model in [:NuSVC, :ProbabilisticNuSVC]
             ,degree::Int32 = Int32(3)
             ,coef0::Float64 = 0.
             ,tolerance::Float64 = .001
-            ,max_iter::Int32 = Int32(-1)
+            ,max_iter::Int32 = Int32(1e7)
             ,shrinking::Bool = true)
 
             model = $Model(
@@ -164,7 +164,7 @@ function OneClassSVM(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.0
     ,tolerance::Float64 = .001
-    ,max_iter::Int32 = Int32(-1)
+    ,max_iter::Int32 = Int32(1e7)
     ,shrinking::Bool = true)
 
     model = OneClassSVM(
@@ -207,7 +207,7 @@ function NuSVR(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.
     ,tolerance::Float64 = .001
-    ,max_iter::Int32 = Int32(-1)
+    ,max_iter::Int32 = Int32(1e7)
     ,shrinking::Bool = true)
 
     model = NuSVR(
@@ -251,7 +251,7 @@ function EpsilonSVR(
     ,degree::Int32 = Int32(3)
     ,coef0::Float64 = 0.
     ,tolerance::Float64 = .001
-    ,max_iter::Int32 = Int32(-1)
+    ,max_iter::Int32 = Int32(1e7)
     ,shrinking::Bool = true)
 
     model = EpsilonSVR(
